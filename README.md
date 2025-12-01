@@ -102,7 +102,7 @@ ros2 run navigation_pkg test
 ```
 
 
-## 4. Example Output
+## 5. Example Output
 
 Below is an example of a completed solution:
 
@@ -117,7 +117,7 @@ Below is an example of a completed solution:
 </p>
 
 
-## 5. Useful Commands
+## 6. Useful Commands
 
 Below are some essential ROS2 tools and command-line utilities that will help you inspect and debug your system while working with the Unity simulation.
 
