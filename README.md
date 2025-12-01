@@ -35,6 +35,7 @@ A window will appear showing the janitor mobile robot inside a fast-food restaur
 Open a second terminal and navigate to the `RoboticsLesson_ws` folder. Install the `ROS_TCP_Endpoint` package:
 
 ```bash
+echo "export ROS_LOCALHOST_ONLY=1" >> ~/.bashrc
 cd <path_to_workspace>/RoboticsLesson_ws/src
 git clone https://github.com/Unity-Technologies/ROS-TCP-Endpoint.git -b main-ros2 
 ```
