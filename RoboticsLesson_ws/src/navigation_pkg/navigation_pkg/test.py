@@ -14,8 +14,6 @@ from tf2_ros.transform_listener import TransformListener
 from tf2_ros import TransformException
 
 
-from .a_star import AStarPlanner
-
 
 class TestingNode(Node):
 
