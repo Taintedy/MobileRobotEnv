@@ -9,17 +9,43 @@ The project contains two main folders:
 - **RoboticsLesson_ws** — a ROS2 workspace containing the final exam task
 
 ---
-
+## 0. Prerequesites (mac only)
+0. Install the mac build from [here]()
+1. Install *TurboVNC-3.2.1-arm64.dmg*
+2. build docker image with ros and graphics
+```bash
+docker build -t ros-vnc .
+```
+3. run the container
+```bash
+docker run -it --privileged -p 5900:5900 -p 10000:10000 -v /path/to/MobileRobotEnv:/home/MobileRobotEnv ros-vnc bash
+```
+4. (optional) attach to the container in another terminal
+```bash
+docker exec -it CONTAINER_ID bash
+```
+5. test opengl support
+```bash
+# in container
+rviz2
+```
+then open TurboVNC Viewer app and connect to the **localhost:5900** server. Rviz2 window should appear. The rest of the instructions (except 1.) should be executed in docker container.
 
 
 ## 1. Running the Unity Simulation
 
-To start the simulation, unzip  the `MobileRobotSim.zip` file and open a terminal (`Ctrl + Alt + T`), navigate to the application folder, and run:
+To start the simulation, unzip  the `MobileRobotSim.zip` (or `MobileRobotSim_mac.zip`) file and open a terminal (`Ctrl + Alt + T`), navigate to the application folder, and run:
 
+**linux:**
 ```bash
 cd <path_to_workspace>/MobileRobotSim
 chmod +x MobileRobotSim.x86_64
 ./MobileRobotSim.x86_64
+```
+**mac (locally, without docker):**
+```bash
+cd <path_to_workspace>/MobileRobotSim_mac
+open MobileRobotSim.app
 ```
 
 A window will appear showing the janitor mobile robot inside a fast-food restaurant:
@@ -102,7 +128,7 @@ ros2 run navigation_pkg test
 ```
 
 
-## 5. Example Output
+## 4. Example Output
 
 Below is an example of a completed solution:
 
@@ -117,7 +143,7 @@ Below is an example of a completed solution:
 </p>
 
 
-## 6. Useful Commands
+## 5. Useful Commands
 
 Below are some essential ROS2 tools and command-line utilities that will help you inspect and debug your system while working with the Unity simulation.
 
@@ -151,4 +177,3 @@ ros2 topic pub <topic_name> <msg_type> <args>   # Manually publish messages (you
 ```
 For more details, see:
 [Understanding topics](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html)
-
