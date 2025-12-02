@@ -10,7 +10,7 @@ The project contains two main folders:
 
 ---
 ## 0. Prerequesites (mac only)
-0. Install the mac build from [here]()
+0. Install the mac build zip file from [here](https://github.com/Taintedy/MobileRobotEnv/releases/tag/arm64_mac_build)
 1. Install *TurboVNC-3.2.1-arm64.dmg*
 2. build docker image with ros and graphics
 ```bash
